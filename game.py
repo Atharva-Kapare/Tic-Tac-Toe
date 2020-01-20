@@ -2,6 +2,7 @@ import sys, pygame
 pygame.init()
 
 size = width, height = 600, 600
+offset = 50
 
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Tic Tac Toe")
@@ -36,11 +37,11 @@ def map(p, a, b, c, d):
     return q
 
 def drawNaughts(x, y):
-    pygame.draw.circle(screen, (255,255,255), (x,y), int(width/6), 2)
+    pygame.draw.circle(screen, (255,255,255), (x,y), int(width/6 - offset), 2)
 
 def drawCrosses(x,y):
-    pygame.draw.line(screen, (255,255,255), (x-width/6, y+height/6), (x+width/6, y-height/6), 2)
-    pygame.draw.line(screen, (255,255,255), (x+width/6, y+height/6), (x-width/6, y-height/6), 2)
+    pygame.draw.line(screen, (255,255,255), ((x-width/6 + offset) , (y+height/6 - offset)), ((x+width/6 - offset), (y-height/6 + offset)), 2)
+    pygame.draw.line(screen, (255,255,255), ((x+width/6 - offset), (y+height/6 - offset)), ((x-width/6 + offset), (y-height/6 + offset)), 2)
 
 while 1:
     for event in pygame.event.get():
