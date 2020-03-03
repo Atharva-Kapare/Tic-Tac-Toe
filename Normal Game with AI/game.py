@@ -43,7 +43,7 @@ def boardValue(board, depth):
     if (check_winning_states(board, ai)):
         return 10 - depth
     elif (check_winning_states(board, human)):
-        return -10 - depth
+        return -10 + depth
     elif checkTie(board):
         return 0
 
