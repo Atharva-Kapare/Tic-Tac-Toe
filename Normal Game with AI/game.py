@@ -1,7 +1,7 @@
 #It is assumed that the AI is always the maximising player and the human is always the minimising player
 
 import sys, pygame, random, math
-sys.setrecursionlimit(999999999)
+#sys.setrecursionlimit(999999999)
 pygame.init()
 
 size = width, height = 600, 600
